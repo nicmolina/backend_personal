@@ -4,7 +4,7 @@ import axios from 'axios';
 const cryptosRouter = Router();
 
 cryptosRouter.get('/', async(request, response)=>{
-
+    
     const client = await getCrypto();
     console.log(client);
     
