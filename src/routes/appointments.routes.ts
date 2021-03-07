@@ -1,10 +1,11 @@
 import { Router } from 'express';
 import axios from 'axios';
+const cors = require('cors');
 
 const cryptosRouter = Router();
 
-cryptosRouter.get('/', async(request, response)=>{
-    
+cryptosRouter.get('/', cors(),async(request, response)=>{
+
     const client = await getCrypto();
     console.log(client);
     
