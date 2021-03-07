@@ -2,9 +2,14 @@ import { Router } from 'express';
 import axios from 'axios';
 const cors = require('cors');
 
+var corsOptions = {
+    origin: 'http://localhost:3000/',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 const cryptosRouter = Router();
 
-cryptosRouter.get('/', cors(),async(request, response)=>{
+cryptosRouter.get('/', cors(corsOptions),async(request, response)=>{
 
     const client = await getCrypto();
     console.log(client);
