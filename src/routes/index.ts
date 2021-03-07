@@ -1,7 +1,10 @@
 import { Router } from 'express';
+const cors = require('cors');
 import cryptosRouter from './appointments.routes';
 import spotifyRouter from './spotify.routes';
 const routes = Router();
+
+routes.use(cors());
 
 //use para qualquer tipo de rota
 routes.use('/cryptos', cryptosRouter);
